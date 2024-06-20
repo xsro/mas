@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <title>Implementaion of Some Formation Control Algorithms</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+  <script type="module" crossorigin src="/mas/assets/main-6f399b70.js"></script>
+  <link rel="stylesheet" href="/mas/assets/index-eab0f1cb.css">
+</head>
+
+<body>
+  
+
+  <div class="figure">
+    <div class="figure">
+      <canvas height="500" width="500" id="original-canvas"></canvas>
+      <span class="t">t</span>
+      <span class="left-bottom">lb</span>
+      <span class="right-top">rt</span>
+    </div>
+  </div>
+
+  <div class="simulator">
+    <button type="button" class="simulate">simulate</button>
+    <button type="button" class="pause">pause</button>
+    <!-- <button type="button" class="continue">continue</button> -->
+    <!-- <button type="button" class="reload">reload</button> -->
+    <!-- <button type="button" class="reset">reset</button> -->
+  </div>
+  <div class="profile">
+    <label for="profile-select">Choose an algorithm to simulate</label>
+    <select name="profiles" id="profile-select">
+    </select>
+    <br>
+    <label for="renderer-select">Choose a tool to visualize</label>
+    <select name="renderer" id="renderer-select">
+      <option value="threejs">threejs</option>
+      <option value="canvas">canvas</option>
+    </select>
+  </div>
+  <div class="description">
+<div id="chen2019.three_in_a_line_break_failed"><p><strong>Single integrators fence the static target.</strong>
+This simulation shows that when 3 agents fence one staic target in Fig.3 of <a href="https://doi.org/10.1016/j.automatica.2019.05.034">Chen 2019</a>.
+In the simulation, we follow the setup of Fig.3 in <a href="https://doi.org/10.1016/j.automatica.2019.05.034">Chen 2019</a>.
+Due to integration error of runge kutta 4 order method,
+the original setup may still break the line formation or rotate about the target.</p>
+</div>
+<div id="chen2019.three_in_a_line_break"><p><strong>Single integrators fence the static target.</strong>
+This simulation shows that when 3 agents fence one staic target in Fig.3 of <a href="https://doi.org/10.1016/j.automatica.2019.05.034">Chen 2019</a>.
+A slight modification of the initial position results in line formation avoidance.</p>
+</div>
+<div id="chen2019.moving-target"><p><strong>Single integrators fence the static target.</strong>
+This simulation apply algorithm of 
+<a href="https://doi.org/10.1016/j.automatica.2019.05.034">Chen 2019</a>
+to the moving target scenerio.
+We can observe some tracking error.</p>
+</div>
+<div id="kou2022.average"><p><strong>Single integrators fence the target with constant velocity.</strong>
+<a href="https://ieeexplore.ieee.org/document/9415150/">Kou 2022</a>
+proposes two algorithm for fencing one target with unknown speed.
+This simulation shows the average velocity tracking fencing algorithm can fence the target with the formation rotating about the target.</p>
+</div>
+<div id="kou2022.individual"><p><strong>Single integrators fence the target with constant velocity.</strong>
+<a href="https://ieeexplore.ieee.org/document/9415150/">Kou 2022</a>
+proposes two algorithm for fencing one target with unknown speed.
+This simulation shows the individual velocity tracking fencing algorithm can fence the target with the formation without rotating about the target.</p>
+</div>
+<div id="yac2024.moving-target"><p>In <a href="https://www.caayac.org/yac2024/">YAC 2024</a>, we propose a novel fencing algorithm
+with distributed line formation avoidance strategy.
+Our algorithm can track a noncooperative target with unknown bounded control input
+and break the singleton formation in a distributed way.
+This simulation shows that our algorithm can break the singleton formation.</p>
+</div>
+<div id="our1_SMC_fully"><p>In <a href="https://www.caayac.org/yac2024/">YAC 2024</a>, we propose a novel fencing algorithm
+with distributed line formation avoidance strategy.
+Our algorithm can track a noncooperative target with unknown bounded control input
+and break the singleton formation in a distributed way.
+This simulation shows that our algorithm can track the noncooperative target.</p>
+</div>
+<div id="our1_SMC_partially"><p>In this simulation, we drive single integrators to fence one noncooperative taget, with fully distributed algorithm.
+All component of the control input is distributed.</p>
+</div>
+<div id="kou2021.with-velocity-measurement"><p><strong>Double integrators fence the target with constant velocity.</strong>
+This simulation is taken from <a href="https://doi.org/10.1002/rnc.5493">kou2021</a>. 
+This controller uses the velocity of the agent itself 
+and estimate the speed of the target.</p>
+</div>
+<div id="kou2021.without-velocity-measurement"><p><strong>Double integrators fence the target with constant velocity.</strong>
+This simulation is taken from <a href="https://doi.org/10.1002/rnc.5493">kou2021</a>. 
+This controller doesn&#39;t use the velocity of the agent itself 
+and estimate the error of speed between itself and the target.</p>
+</div>
+<div id="hu2023"><p><a href="https://linkinghub.elsevier.com/retrieve/pii/S0005109822006549">hu2023</a> proposes fencing controllers for oscillating target</p>
+</div>
+</div>
+  <table class="panel"></table>
+
+  <footer>
+    created by <a href="mailto://xsro@foxmail.com">xsro</a> under Dr. Zhang in SYSUsz
+    <br>
+    published at Thu Jun 20 2024 10:28:05 GMT+0800 (中国标准时间)
+  </footer>
+</body>
+
+</html>
